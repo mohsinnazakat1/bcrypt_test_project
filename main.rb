@@ -1,5 +1,5 @@
-$SET_PATH = '.'
-require 'bcrypt'
+require_relative 'bcrypt'
+
 
 users = [
     {'username' => 'mohsin', 'password' => 'abc123a'},
@@ -9,7 +9,6 @@ users = [
     {'username' =>  'mashoor', 'password' =>'abc123f'},
 ]
 
-
-hashed_user_list = create_hash_passwords users
+hashed_user_list = Auth.create_hash_passwords users
 # puts hashed_user_list
-puts authentication 'mohsin','abc123b', hashed_user_list
+puts Auth.authentication 'mohsin','abc123a', hashed_user_list
